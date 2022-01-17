@@ -24,6 +24,7 @@ export const Content = styled.div`
         height: 3rem;
         border-radius: 0.25rem;
         border: none;
+        outline: none;
 
         transition: filter 0.2s;
 
