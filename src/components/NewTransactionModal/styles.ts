@@ -27,7 +27,7 @@ import styled from 'styled-components'
 
    }
 
-    button {
+    button[type="submit"] {
          width: 100%;
          padding: 0 1.5rem;
          height: 4rem;
@@ -40,6 +40,7 @@ import styled from 'styled-components'
          color: var(--shape);
 
          font-weight: 500;
+         font-size: 1rem;
 
          transition: filter 0.2s;
 
@@ -51,6 +52,37 @@ import styled from 'styled-components'
       }
  `;
 
+export const TransactionTypeModal = styled.div`
+   margin: 1rem 0;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 0.5rem;
+
+   button {
+      height: 4rem;
+      border: 1px solid #d7d7d7;
+      border-radius: 0.25rem;
+
+      background: transparent;
+
+      display: flex;
+      justify-content:center;
+      align-items: center;
+
+      img {
+         width: 20px;
+         height: 20px;
+      }
+
+      span {
+         display: inline-block;
+         margin-left: 1rem;
+         font-size: 1rem;
+         color: var(--title-colors)
+      }
+   }
+
+`;
 
 
  export default Container;
