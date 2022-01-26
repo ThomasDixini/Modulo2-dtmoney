@@ -1,4 +1,4 @@
-import  Container  from '../NewTransactionModal/styles'
+import  Container  from './styles'
 import Modal from 'react-modal';
 
 interface NewTransactionModalProps {
@@ -10,7 +10,7 @@ interface NewTransactionModalProps {
 
 export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModalProps) {
     return (
-        <Container>
+        
             <Modal
             isOpen={isOpen}
             onRequestClose={onRequestClose}
@@ -19,15 +19,17 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
             className="react-modal-content"
             
             >
-                <h2>Cadastrar Transação</h2>
+                <Container>
+                    <h2>Cadastrar Transação</h2>
 
-                <input type="text" placeholder="Título" />
-                <input type="number" placeholder="Valor" />
-                <input type="text" placeholder="Categoria" />
+                    <input type="text" placeholder="Título" />
+                    <input type="number" placeholder="Valor" />
+                    <input type="text" placeholder="Categoria" />
 
-                <button type="submit"> Cadastrar</button>
+                    <button type="submit"> Cadastrar</button>
+                </Container>
 
             </Modal>
-        </Container>
+        
     );
 }
