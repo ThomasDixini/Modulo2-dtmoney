@@ -1,8 +1,10 @@
-import  Container, { TransactionTypeModal }  from './styles'
+import  Container, { RadioBox, TransactionTypeModal }  from './styles'
 import Modal from 'react-modal';
 import closeImg from '../../assets/Vector.svg'
 import incomesImg from '../../assets/Entradas.svg'
 import outcomesImg from '../../assets/Saídas.svg'
+
+import { useState } from 'react'
 
 
 interface NewTransactionModalProps {
@@ -13,6 +15,9 @@ interface NewTransactionModalProps {
 
 
 export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModalProps) {
+
+    const [type, setType] = useState('deposit')
+
     return (
         
             <Modal
@@ -38,21 +43,27 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
                     <input type="number" placeholder="Valor" />
 
                         <TransactionTypeModal>
-                            <button 
-                            type="button">
+                            <RadioBox
+                            type="button"
+                            onClick={() => { setType('deposit') }}
+                            isActive={type == 'deposit'}
+                            >
 
                                 <img src={incomesImg} alt="Entrada" />
                                 <span>Entrada</span>
 
-                            </button>
+                            </RadioBox>
 
-                            <button 
-                            type="button">
+                            <RadioBox 
+                            type="button"
+                            onClick={() => { setType('withdraw') }}
+                            isActive={type == 'withdraw'}
+                            >
 
                                 <img src={outcomesImg} alt="Saída" />
                                 <span>Saída</span>
 
-                            </button>
+                            </RadioBox>
                         </TransactionTypeModal>
 
                     <input type="text" placeholder="Categoria" />
