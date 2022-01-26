@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { darken } from 'polished'
 
 
  const Container = styled.form`
@@ -68,6 +69,10 @@ export const TransactionTypeModal = styled.div`
       display: flex;
       justify-content:center;
       align-items: center;
+
+      &:hover {
+         border-color: ${darken(0.1, '#d7d7d7')} 
+      }
 
       img {
          width: 20px;
