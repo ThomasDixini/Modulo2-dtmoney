@@ -1,10 +1,15 @@
 import { Container, Content } from './styles'
 import logoImg from '../../assets/Logo.svg'
+import { useContext } from 'react';
+import { TransactionsContext } from '../../TransactionsContext';
 
 
 interface HeaderProps {
     onOpenNewTransactionModal: () => void;
 }
+
+const data = useContext(TransactionsContext)
+console.log(data)
 
 
 export function Header({ onOpenNewTransactionModal }:HeaderProps) {
