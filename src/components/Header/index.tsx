@@ -8,8 +8,7 @@ interface HeaderProps {
     onOpenNewTransactionModal: () => void;
 }
 
-const data = useContext(TransactionsContext)
-console.log(data)
+
 
 
 export function Header({ onOpenNewTransactionModal }:HeaderProps) {
