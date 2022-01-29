@@ -5,7 +5,7 @@ import { Header } from './components/Header/index';
 import { GlobalStyle } from './styles/global'
 import { useState } from 'react';
 import { NewTransactionModal } from './components/NewTransactionModal/NewTransactionModal';
-import { TransactionsProvider } from './TransactionsContext';
+import { TransactionsProvider } from './components/hooks/useTransactions';
 
 
 

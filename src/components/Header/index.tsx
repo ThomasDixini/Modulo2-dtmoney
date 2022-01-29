@@ -1,7 +1,6 @@
 import { Container, Content } from './styles'
 import logoImg from '../../assets/Logo.svg'
-import { useContext } from 'react';
-import { TransactionsContext } from '../../TransactionsContext';
+
 
 
 interface HeaderProps {
