@@ -5,7 +5,6 @@ import incomesImg from '../../assets/Entradas.svg'
 import outcomesImg from '../../assets/Saídas.svg'
 
 import { FormEvent, useContext, useState } from 'react'
-import { api } from '../../services/api';
 import { TransactionsContext } from '../../TransactionsContext';
 
 
@@ -29,15 +28,23 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
 
 
 
-    function handleCreateNewtransaction(event: FormEvent) {
+    async function handleCreateNewtransaction(event: FormEvent) {
         event.preventDefault();
 
-        createTransaction({
+        await createTransaction({
             title,
             amount,
             type,
             category,
+            
         })
+
+        setTitle('');
+        setAmount(0);
+        setType('deposit');
+        setCategory('');
+
+        onRequestClose();
 
         
         
@@ -86,7 +93,7 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
                             <RadioBox
                             type="button"
                             onClick={() => { setType('deposit') }}
-                            isActive={type == 'deposit'}
+                            isActive={type === 'deposit'}
                             activeColor="green"
                             >
 
@@ -98,7 +105,7 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
                             <RadioBox 
                             type="button"
                             onClick={() => { setType('withdraw') }}
-                            isActive={type == 'withdraw'}
+                            isActive={type === 'withdraw'}
                             activeColor="red"
                             >
 
