@@ -17,7 +17,7 @@ export function Summary() {
             acc.withdraw += transaction.amount;
             acc.total -= transaction.amount;
 
-            console.log(transactions)
+            
         }
 
         return acc;
